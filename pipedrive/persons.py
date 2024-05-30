@@ -34,6 +34,10 @@ class Persons(object):
         url = "personFields"
         return self._client._get(self._client.BASE_URL + url, params=params, **kwargs)
 
+    def create_person_field(self, data, **kwargs):
+        url = "personFields"
+        return self._client._post(self._client.BASE_URL + url, json=data, **kwargs)
+
     def get_person_activities(self, person_id, **kwargs):
         url = "persons/{}/activities".format(person_id)
         return self._client._get(self._client.BASE_URL + url, **kwargs)
